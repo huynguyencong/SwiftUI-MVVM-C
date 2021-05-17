@@ -13,7 +13,7 @@ protocol GithubNetworkProvider {
 }
 
 class GithubNetworkClient: GithubNetworkProvider {
-    var networkClient = NetworkClient.instance
+    var networkClient: NetworkProvider = NetworkClient.instance
     
     func getRepos(username: String) -> AnyPublisher<[Repo], Error> {
         networkClient.request(GithubRouter.repos(username: username)).decode()

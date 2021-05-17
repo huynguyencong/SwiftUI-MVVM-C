@@ -20,7 +20,21 @@
 		43A601BA2652560200B24B9D /* GithubNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601B92652560200B24B9D /* GithubNetworkProvider.swift */; };
 		43A601BE2652561E00B24B9D /* GithubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601BD2652561E00B24B9D /* GithubRouter.swift */; };
 		43A601C3265257EE00B24B9D /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601C2265257EE00B24B9D /* Repo.swift */; };
+		43A601CD265267C000B24B9D /* SwiftUI_MVVM_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601CC265267C000B24B9D /* SwiftUI_MVVM_CTests.swift */; };
+		43A601DA2652687F00B24B9D /* repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 43A601D92652687F00B24B9D /* repos.json */; };
+		43A601E0265268BD00B24B9D /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601DF265268BD00B24B9D /* TestUtils.swift */; };
+		43A601E526526AAC00B24B9D /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601E426526AAC00B24B9D /* MockNetworkClient.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43A601CF265267C000B24B9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43736D732652280700CE4368 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43736D7A2652280700CE4368;
+			remoteInfo = "SwiftUI-MVVM-C";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		43736D7B2652280700CE4368 /* SwiftUI-MVVM-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-MVVM-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +51,12 @@
 		43A601B92652560200B24B9D /* GithubNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubNetworkProvider.swift; sourceTree = "<group>"; };
 		43A601BD2652561E00B24B9D /* GithubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRouter.swift; sourceTree = "<group>"; };
 		43A601C2265257EE00B24B9D /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		43A601CA265267C000B24B9D /* SwiftUI-MVVM-CTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-MVVM-CTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A601CC265267C000B24B9D /* SwiftUI_MVVM_CTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_CTests.swift; sourceTree = "<group>"; };
+		43A601CE265267C000B24B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A601D92652687F00B24B9D /* repos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = repos.json; sourceTree = "<group>"; };
+		43A601DF265268BD00B24B9D /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		43A601E426526AAC00B24B9D /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +68,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43A601C7265267C000B24B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				43736D7D2652280700CE4368 /* SwiftUI-MVVM-C */,
+				43A601CB265267C000B24B9D /* SwiftUI-MVVM-CTests */,
 				43736D7C2652280700CE4368 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				43736D7B2652280700CE4368 /* SwiftUI-MVVM-C.app */,
+				43A601CA265267C000B24B9D /* SwiftUI-MVVM-CTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +172,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		43A601CB265267C000B24B9D /* SwiftUI-MVVM-CTests */ = {
+			isa = PBXGroup;
+			children = (
+				43A601E326526A6F00B24B9D /* Networking */,
+				43A601D82652684700B24B9D /* MockData */,
+				43A601CC265267C000B24B9D /* SwiftUI_MVVM_CTests.swift */,
+				43A601CE265267C000B24B9D /* Info.plist */,
+				43A601DF265268BD00B24B9D /* TestUtils.swift */,
+			);
+			path = "SwiftUI-MVVM-CTests";
+			sourceTree = "<group>";
+		};
+		43A601D82652684700B24B9D /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				43A601D92652687F00B24B9D /* repos.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		43A601E326526A6F00B24B9D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				43A601E426526AAC00B24B9D /* MockNetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +223,24 @@
 			productReference = 43736D7B2652280700CE4368 /* SwiftUI-MVVM-C.app */;
 			productType = "com.apple.product-type.application";
 		};
+		43A601C9265267C000B24B9D /* SwiftUI-MVVM-CTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A601D3265267C100B24B9D /* Build configuration list for PBXNativeTarget "SwiftUI-MVVM-CTests" */;
+			buildPhases = (
+				43A601C6265267C000B24B9D /* Sources */,
+				43A601C7265267C000B24B9D /* Frameworks */,
+				43A601C8265267C000B24B9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43A601D0265267C000B24B9D /* PBXTargetDependency */,
+			);
+			name = "SwiftUI-MVVM-CTests";
+			productName = "SwiftUI-MVVM-CTests";
+			productReference = 43A601CA265267C000B24B9D /* SwiftUI-MVVM-CTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +252,10 @@
 				TargetAttributes = {
 					43736D7A2652280700CE4368 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					43A601C9265267C000B24B9D = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 43736D7A2652280700CE4368;
 					};
 				};
 			};
@@ -197,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				43736D7A2652280700CE4368 /* SwiftUI-MVVM-C */,
+				43A601C9265267C000B24B9D /* SwiftUI-MVVM-CTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +289,14 @@
 				43736D8B2652280900CE4368 /* LaunchScreen.storyboard in Resources */,
 				43736D882652280900CE4368 /* Preview Assets.xcassets in Resources */,
 				43736D852652280900CE4368 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43A601C8265267C000B24B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A601DA2652687F00B24B9D /* repos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +319,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43A601C6265267C000B24B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43A601CD265267C000B24B9D /* SwiftUI_MVVM_CTests.swift in Sources */,
+				43A601E526526AAC00B24B9D /* MockNetworkClient.swift in Sources */,
+				43A601E0265268BD00B24B9D /* TestUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43A601D0265267C000B24B9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43736D7A2652280700CE4368 /* SwiftUI-MVVM-C */;
+			targetProxy = 43A601CF265267C000B24B9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43736D892652280900CE4368 /* LaunchScreen.storyboard */ = {
@@ -403,6 +509,46 @@
 			};
 			name = Release;
 		};
+		43A601D1265267C000B24B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94KKN3D4YS;
+				INFOPLIST_FILE = "SwiftUI-MVVM-CTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nch.SwiftUI-MVVM-CTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-MVVM-C.app/SwiftUI-MVVM-C";
+			};
+			name = Debug;
+		};
+		43A601D2265267C000B24B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94KKN3D4YS;
+				INFOPLIST_FILE = "SwiftUI-MVVM-CTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nch.SwiftUI-MVVM-CTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-MVVM-C.app/SwiftUI-MVVM-C";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,6 +566,15 @@
 			buildConfigurations = (
 				43736D902652280900CE4368 /* Debug */,
 				43736D912652280900CE4368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43A601D3265267C100B24B9D /* Build configuration list for PBXNativeTarget "SwiftUI-MVVM-CTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A601D1265267C000B24B9D /* Debug */,
+				43A601D2265267C000B24B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
