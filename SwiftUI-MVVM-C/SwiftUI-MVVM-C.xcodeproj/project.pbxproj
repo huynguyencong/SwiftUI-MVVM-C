@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		43736D852652280900CE4368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43736D842652280900CE4368 /* Assets.xcassets */; };
 		43736D882652280900CE4368 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43736D872652280900CE4368 /* Preview Assets.xcassets */; };
 		43736D8B2652280900CE4368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43736D892652280900CE4368 /* LaunchScreen.storyboard */; };
+		43A6019E26522CFF00B24B9D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 43A6019D26522CFF00B24B9D /* Alamofire */; };
+		43A601A426522DBA00B24B9D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601A326522DBA00B24B9D /* NetworkProvider.swift */; };
+		43A601A726522E0F00B24B9D /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601A626522E0F00B24B9D /* NetworkClient.swift */; };
+		43A601B52652309900B24B9D /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601B42652309900B24B9D /* NetworkUtils.swift */; };
+		43A601BA2652560200B24B9D /* GithubNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601B92652560200B24B9D /* GithubNetworkProvider.swift */; };
+		43A601BE2652561E00B24B9D /* GithubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601BD2652561E00B24B9D /* GithubRouter.swift */; };
+		43A601C3265257EE00B24B9D /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601C2265257EE00B24B9D /* Repo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,12 @@
 		43736D872652280900CE4368 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43736D8A2652280900CE4368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43736D8C2652280900CE4368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A601A326522DBA00B24B9D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		43A601A626522E0F00B24B9D /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		43A601B42652309900B24B9D /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		43A601B92652560200B24B9D /* GithubNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubNetworkProvider.swift; sourceTree = "<group>"; };
+		43A601BD2652561E00B24B9D /* GithubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRouter.swift; sourceTree = "<group>"; };
+		43A601C2265257EE00B24B9D /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A6019E26522CFF00B24B9D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +70,8 @@
 		43736D7D2652280700CE4368 /* SwiftUI-MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
+				43A601A026522D1500B24B9D /* Shared */,
+				43A601B7265255BC00B24B9D /* CommonShared */,
 				43736D7E2652280700CE4368 /* AppDelegate.swift */,
 				43736D802652280700CE4368 /* SceneDelegate.swift */,
 				43736D822652280700CE4368 /* ContentView.swift */,
@@ -75,6 +91,58 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		43A601A026522D1500B24B9D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				43A601C1265257E200B24B9D /* Models */,
+				43A601B8265255F300B24B9D /* Networking */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		43A601A126522D2A00B24B9D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				43A601A226522D9F00B24B9D /* NetworkProvider */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		43A601A226522D9F00B24B9D /* NetworkProvider */ = {
+			isa = PBXGroup;
+			children = (
+				43A601A326522DBA00B24B9D /* NetworkProvider.swift */,
+				43A601A626522E0F00B24B9D /* NetworkClient.swift */,
+				43A601B42652309900B24B9D /* NetworkUtils.swift */,
+			);
+			path = NetworkProvider;
+			sourceTree = "<group>";
+		};
+		43A601B7265255BC00B24B9D /* CommonShared */ = {
+			isa = PBXGroup;
+			children = (
+				43A601A126522D2A00B24B9D /* Networking */,
+			);
+			path = CommonShared;
+			sourceTree = "<group>";
+		};
+		43A601B8265255F300B24B9D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				43A601B92652560200B24B9D /* GithubNetworkProvider.swift */,
+				43A601BD2652561E00B24B9D /* GithubRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		43A601C1265257E200B24B9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43A601C2265257EE00B24B9D /* Repo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +159,9 @@
 			dependencies = (
 			);
 			name = "SwiftUI-MVVM-C";
+			packageProductDependencies = (
+				43A6019D26522CFF00B24B9D /* Alamofire */,
+			);
 			productName = "SwiftUI-MVVM-C";
 			productReference = 43736D7B2652280700CE4368 /* SwiftUI-MVVM-C.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 43736D722652280700CE4368;
+			packageReferences = (
+				43A6019C26522CFF00B24B9D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 43736D7C2652280700CE4368 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,8 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				43736D7F2652280700CE4368 /* AppDelegate.swift in Sources */,
+				43A601BE2652561E00B24B9D /* GithubRouter.swift in Sources */,
+				43A601A726522E0F00B24B9D /* NetworkClient.swift in Sources */,
+				43A601C3265257EE00B24B9D /* Repo.swift in Sources */,
+				43A601A426522DBA00B24B9D /* NetworkProvider.swift in Sources */,
 				43736D812652280700CE4368 /* SceneDelegate.swift in Sources */,
+				43A601B52652309900B24B9D /* NetworkUtils.swift in Sources */,
 				43736D832652280700CE4368 /* ContentView.swift in Sources */,
+				43A601BA2652560200B24B9D /* GithubNetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43A6019C26522CFF00B24B9D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43A6019D26522CFF00B24B9D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43A6019C26522CFF00B24B9D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43736D732652280700CE4368 /* Project object */;
 }
