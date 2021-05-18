@@ -24,6 +24,11 @@
 		43A601DA2652687F00B24B9D /* repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 43A601D92652687F00B24B9D /* repos.json */; };
 		43A601E0265268BD00B24B9D /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601DF265268BD00B24B9D /* TestUtils.swift */; };
 		43A601E526526AAC00B24B9D /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601E426526AAC00B24B9D /* MockNetworkClient.swift */; };
+		43A601ED265272E800B24B9D /* RepoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601EC265272E800B24B9D /* RepoListCoordinator.swift */; };
+		43A601F3265272F600B24B9D /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601F2265272F600B24B9D /* RepoListView.swift */; };
+		43A601F8265273B700B24B9D /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601F7265273B700B24B9D /* RepoListViewModel.swift */; };
+		43A601FF2652780100B24B9D /* View+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A601FE2652780100B24B9D /* View+Utils.swift */; };
+		43A60203265278A600B24B9D /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A60202265278A600B24B9D /* RepoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		43A601D92652687F00B24B9D /* repos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = repos.json; sourceTree = "<group>"; };
 		43A601DF265268BD00B24B9D /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		43A601E426526AAC00B24B9D /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		43A601EC265272E800B24B9D /* RepoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCoordinator.swift; sourceTree = "<group>"; };
+		43A601F2265272F600B24B9D /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
+		43A601F7265273B700B24B9D /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		43A601FE2652780100B24B9D /* View+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Utils.swift"; sourceTree = "<group>"; };
+		43A60202265278A600B24B9D /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		43736D7D2652280700CE4368 /* SwiftUI-MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
+				43A601EA265272B500B24B9D /* Modules */,
 				43A601A026522D1500B24B9D /* Shared */,
 				43A601B7265255BC00B24B9D /* CommonShared */,
 				43736D7E2652280700CE4368 /* AppDelegate.swift */,
@@ -150,6 +161,7 @@
 		43A601B7265255BC00B24B9D /* CommonShared */ = {
 			isa = PBXGroup;
 			children = (
+				43A601FD265277F400B24B9D /* Extensions */,
 				43A601A126522D2A00B24B9D /* Networking */,
 			);
 			path = CommonShared;
@@ -198,6 +210,41 @@
 				43A601E426526AAC00B24B9D /* MockNetworkClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		43A601EA265272B500B24B9D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				43A601EB265272BC00B24B9D /* RepoList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		43A601EB265272BC00B24B9D /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				43A601F6265273A600B24B9D /* RepoList */,
+				43A601EC265272E800B24B9D /* RepoListCoordinator.swift */,
+			);
+			path = RepoList;
+			sourceTree = "<group>";
+		};
+		43A601F6265273A600B24B9D /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				43A601F2265272F600B24B9D /* RepoListView.swift */,
+				43A601F7265273B700B24B9D /* RepoListViewModel.swift */,
+				43A60202265278A600B24B9D /* RepoCell.swift */,
+			);
+			path = RepoList;
+			sourceTree = "<group>";
+		};
+		43A601FD265277F400B24B9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43A601FE2652780100B24B9D /* View+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,11 +355,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				43736D7F2652280700CE4368 /* AppDelegate.swift in Sources */,
+				43A60203265278A600B24B9D /* RepoCell.swift in Sources */,
+				43A601FF2652780100B24B9D /* View+Utils.swift in Sources */,
 				43A601BE2652561E00B24B9D /* GithubRouter.swift in Sources */,
+				43A601ED265272E800B24B9D /* RepoListCoordinator.swift in Sources */,
 				43A601A726522E0F00B24B9D /* NetworkClient.swift in Sources */,
 				43A601C3265257EE00B24B9D /* Repo.swift in Sources */,
 				43A601A426522DBA00B24B9D /* NetworkProvider.swift in Sources */,
 				43736D812652280700CE4368 /* SceneDelegate.swift in Sources */,
+				43A601F3265272F600B24B9D /* RepoListView.swift in Sources */,
+				43A601F8265273B700B24B9D /* RepoListViewModel.swift in Sources */,
 				43A601B52652309900B24B9D /* NetworkUtils.swift in Sources */,
 				43736D832652280700CE4368 /* ContentView.swift in Sources */,
 				43A601BA2652560200B24B9D /* GithubNetworkProvider.swift in Sources */,

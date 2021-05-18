@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Repo: Codable {
+struct Repo: Codable, Identifiable {
     var id: Int?
     var name: String?
     var description: String?
+    var fork: Bool?
 }
