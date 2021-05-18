@@ -11,6 +11,7 @@ import Combine
 protocol GithubNetworkProvider {
     func getRepos(username: String) -> AnyPublisher<[Repo], Error>
     func getRepo(username: String, name: String) -> AnyPublisher<Repo, Error>
+    func getUser(username: String) -> AnyPublisher<User, Error>
 }
 
 class GithubNetworkClient: GithubNetworkProvider {
@@ -22,5 +23,9 @@ class GithubNetworkClient: GithubNetworkProvider {
     
     func getRepo(username: String, name: String) -> AnyPublisher<Repo, Error> {
         networkClient.request(GithubRouter.repo(username: username, name: name)).decode()
+    }
+    
+    func getUser(username: String) -> AnyPublisher<User, Error> {
+        networkClient.request(GithubRouter.user(username: username)).decode()
     }
 }

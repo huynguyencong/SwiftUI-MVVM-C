@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct RepoListCoordinator: View {
+    static let username = "huynguyencong"
+    
     @State private var selectedRepo: Repo?
+    @State private var isProfilePresented = false
+    
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -17,12 +21,20 @@ struct RepoListCoordinator: View {
                 selectedRepo = repo
             })
             .listStyle(PlainListStyle())
+            .navigationBarTitle("\(Self.username)'s repos", displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                isProfilePresented = true
+            }, label: {
+                Image(systemName: "person.crop.circle")
+            }))
             
             if let selectedRepo = selectedRepo {
                 EmptyNavigationLink(destination: RepoDetailsView(inputRepo: selectedRepo, tapOnLinkAction: tapOnLinkAction), selectedItem: $selectedRepo)
             }
         }
-        .navigationBarTitle("huynguyencong's repos", displayMode: .inline)
+        .fullScreenCover(isPresented: $isProfilePresented, content: {
+            ProfileCoordinator(username: Self.username)
+        })
     }
     
     private func tapOnLinkAction(url: URL) {
