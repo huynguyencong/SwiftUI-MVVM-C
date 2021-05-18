@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct RepoListCoordinator: View {
+    @State private var selectedRepo: Repo?
+    
     var body: some View {
-        RepoListView()
-            .navigationBarTitle("huynguyencong's repos", displayMode: .inline)
+        VStack {
+            RepoListView(tapOnRepoAction: { repo in
+                selectedRepo = repo
+            })
+            .listStyle(PlainListStyle())
+            
+            EmptyNavigationLink(destination: Text("Repo detail \(selectedRepo?.name ?? "")"), selectedItem: $selectedRepo)
+        }
+        .navigationBarTitle("huynguyencong's repos", displayMode: .inline)
     }
 }
