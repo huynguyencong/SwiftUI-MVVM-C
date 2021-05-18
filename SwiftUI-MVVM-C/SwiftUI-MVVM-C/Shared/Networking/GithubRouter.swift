@@ -9,6 +9,7 @@ import Foundation
 
 enum GithubRouter: RequestInfoConvertible {
     case repos(username: String)
+    case repo(username: String, name: String)
     
     var endpoint: String {
         "https://api.github.com"
@@ -22,6 +23,8 @@ enum GithubRouter: RequestInfoConvertible {
         switch self {
         case .repos(let username):
             return "users/\(username)/repos"
+        case .repo(let username, let name):
+            return "repos/\(username)/\(name)"
         }
     }
     

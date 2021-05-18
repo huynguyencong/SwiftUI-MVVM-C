@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RepoListCoordinator: View {
     @State private var selectedRepo: Repo?
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         VStack {
@@ -17,8 +18,14 @@ struct RepoListCoordinator: View {
             })
             .listStyle(PlainListStyle())
             
-            EmptyNavigationLink(destination: Text("Repo detail \(selectedRepo?.name ?? "")"), selectedItem: $selectedRepo)
+            if let selectedRepo = selectedRepo {
+                EmptyNavigationLink(destination: RepoDetailsView(inputRepo: selectedRepo, tapOnLinkAction: tapOnLinkAction), selectedItem: $selectedRepo)
+            }
         }
         .navigationBarTitle("huynguyencong's repos", displayMode: .inline)
+    }
+    
+    private func tapOnLinkAction(url: URL) {
+        openURL(url)
     }
 }
