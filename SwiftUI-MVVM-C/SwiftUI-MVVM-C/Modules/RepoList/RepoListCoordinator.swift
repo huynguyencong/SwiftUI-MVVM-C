@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct RepoListCoordinator: View {
-    static let username = "huynguyencong"
-    
     @State private var selectedRepo: Repo?
     @State private var isProfilePresented = false
     
     @Environment(\.openURL) var openURL
+    
+    let username: String
     
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct RepoListCoordinator: View {
                 selectedRepo = repo
             })
             .listStyle(PlainListStyle())
-            .navigationBarTitle("\(Self.username)'s repos", displayMode: .inline)
+            .navigationBarTitle("\(username)'s repos", displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 isProfilePresented = true
             }, label: {
@@ -33,7 +33,7 @@ struct RepoListCoordinator: View {
             }
         }
         .fullScreenCover(isPresented: $isProfilePresented, content: {
-            ProfileCoordinator(username: Self.username)
+            ProfileCoordinator(username: username)
         })
     }
     

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    static let username = "huynguyencong"
+    
     var body: some View {
         NavigationView {
-            RepoListCoordinator()   
+            RepoListCoordinator(username: Self.username)   
         }
     }
 }
