@@ -19,24 +19,24 @@ struct ProfileView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Text(user?.login ?? "")
+            Text(viewModel.username ?? "")
                 .font(.title)
                 .leadingAlignment()
             
-            Text(user?.name ?? "")
+            Text(viewModel.displayName ?? "")
                 .font(.title2)
                 .leadingAlignment()
             
-            Text(user?.bio ?? "")
+            Text(viewModel.bio ?? "")
             
             VStack {
-                Text("Public repos: \(user?.publicRepos ?? 0)")
+                Text(viewModel.publicReposText ?? "")
                     .leadingAlignment()
-                Text("Public gists: \(user?.publicGists ?? 0)")
+                Text(viewModel.publicGistsText ?? "")
                     .leadingAlignment()
-                Text("Followers: \(user?.followers ?? 0)")
+                Text(viewModel.followersText ?? "")
                     .leadingAlignment()
-                Text("Following: \(user?.following ?? 0)")
+                Text(viewModel.followingText ?? "")
                     .leadingAlignment()
             }
             

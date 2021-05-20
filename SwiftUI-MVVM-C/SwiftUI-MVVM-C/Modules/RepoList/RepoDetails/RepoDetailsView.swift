@@ -12,33 +12,29 @@ struct RepoDetailsView: View {
     let inputRepo: Repo
     let tapOnLinkAction: (URL) -> Void
     
-    var repo: Repo {
-        viewModel.repo ?? inputRepo
-    }
-    
     var body: some View {
         ScrollView(.vertical) {
             VStack(spacing: 16) {
                 VStack {
-                    Text(repo.name ?? "")
+                    Text(viewModel.repoName ?? "")
                         .font(.title)
                         .leadingAlignment()
                     
-                    if (repo.fork ?? false) {
-                        Text(forkedText)
+                    if viewModel.isForkTextDisplayed {
+                        Text(viewModel.forkText ?? "")
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .leadingAlignment()
                     }
                 }
                 
-                if let description = repo.description {
-                    Text(description)
+                if viewModel.isDescriptionTextDisplayed {
+                    Text(viewModel.description ?? "")
                         .leadingAlignment()
                 }
                 
                 Button("Open Github website to see more details") {
-                    if let url = repo.htmlURL {
+                    if let url = viewModel.repo?.htmlURL {
                         tapOnLinkAction(url)
                     }
                 }
@@ -46,11 +42,13 @@ struct RepoDetailsView: View {
             }
             .padding()
         }
-        .onAppear(perform: {
+        .onLoad {
+            viewModel.repo = inputRepo
+            
             if let username = inputRepo.owner?.login, let name = inputRepo.name {
                 viewModel.getRepo(username: username, name: name)
             }
-        })
+        }
     }
     
     var forkedText: String {
