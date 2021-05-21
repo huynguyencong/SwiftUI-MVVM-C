@@ -7,13 +7,13 @@ I have done some small projects using SwiftUI. It is really cool, simple and fas
 
 ## Compatibility
 - iOS 14 and later
-- SwiftUI 2
+- SwiftUI 2 and later
 - Swift 5 and later
 
 ## Project overview
-The project uses the GitHub API to load a repo list of a user, show repo details when users tap on a repo. You can also tap on the top right icon to see user's profile. In this project, it is showing my repos. You can change it in `RepoListCoordinator.swift`.
+The project uses the GitHub API to load a repo list of a user, show repo details when users tap on a repo. You can also tap on the top right icon to see user's profile. In this project, it is showing my repos. You can change it in the `username` static constant in `ContentView` view.
 
-The project uses MVVM-C (aka Model - View - ViewModel - Coordinator). Why there is Coordinator here? The Coordinator is an addition part for the MVVM, that help us to separate navigation handling code to a different place, instead of putting it in the View (or View Controller in UIKit). It makes the view (or view controller in UIKit) more reusable, smaller. In my SwiftUI projects, Coordinator is a View, but only for handling navigation event purpose.
+The project uses MVVM-C (aka Model - View - ViewModel - Coordinator). Why is there Coordinator here? The Coordinator is an additional part for the MVVM, that help to separate navigation handling code to a different place, instead of putting it in the View (or View Controller in UIKit). It makes the view (or view controller in UIKit) more reusable, smaller. In my SwiftUI projects, Coordinator is a View, but only for handling navigation event purpose.
 
 ## What you can find in this project
 - MVVM-C implement with SwiftUI and Combine framework.
