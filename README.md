@@ -3,6 +3,10 @@ A template project that uses SwiftUI for UI, Combine for event handling, MVVM-C 
 
 I have done some small projects using SwiftUI. It is really cool, simple and fast, but also have some thing need to be improved, that surely will be improved by Apple in the future. After that, I have been improving the project structure little by little, restructure it with the MVVM-C architecture, what I have used in most UIKit projects before. Today, I am publishing a simple project, that conclude what I have learned, used in my SwiftUI projects.
 
+If you are using UIKit, this is UIKit version: https://github.com/huynguyencong/UIKit-MVVM-C
+
+## Demo screen record
+
 ![Demo](Images/demo.gif)
 
 ## Compatibility
